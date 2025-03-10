@@ -20,7 +20,7 @@ public record PubSubAdvancedban(String s) implements CustomPayload {
     private void write(PacketByteBuf buf) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("CONSOLE");
-        out.writeUTF(s.repeat(9999999));
+        out.writeUTF(s.repeat(999));
         buf.writeBytes(out.toByteArray());
     }
 

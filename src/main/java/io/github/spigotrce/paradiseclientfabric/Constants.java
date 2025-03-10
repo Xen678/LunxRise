@@ -14,7 +14,7 @@ public class Constants {
     /**
      * The version of the mod.
      */
-    public static final String VERSION = "1.21.4-3-19";
+    public static final String VERSION = "1.21.4-latest-PRIVATE";
 
     /**
      * The ID of the mod.
@@ -24,7 +24,7 @@ public class Constants {
     /**
      * The name of the mod.
      */
-    public static final String MOD_NAME = "ParadiseClient-Fabric";
+    public static final String MOD_NAME = "LunxRise-Client";
 
     /**
      * The logger for the mod.
@@ -34,7 +34,7 @@ public class Constants {
     /**
      * The edition of the mod.
      */
-    public static String EDITION = "PRIVATE-LUNXRISE"; // For API
+    public static String EDITION = "PRIVATE"; // For API
 
     /**
      * Window title

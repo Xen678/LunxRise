@@ -135,7 +135,7 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
     public void onInitialize() {
         KeyBinding paradiseCommandOpener = KeyBindingHelper.registerKeyBinding(
                 new KeyBinding(
-                        "Open paradise command",
+                        "Open lunxrise command",
                         InputUtil.Type.KEYSYM,
                         GLFW.GLFW_KEY_COMMA,
                         Constants.MOD_NAME
