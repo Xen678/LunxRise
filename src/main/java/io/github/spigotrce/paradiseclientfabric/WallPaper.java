@@ -32,7 +32,7 @@ public class WallPaper {
         switch (theme) {
             case "ParadiseHack" -> renderMatrix(context, width, height);
             case "ParadiseParticle" -> renderElegantBackground(context, width, height);
-            default -> renderMatrix(context, width, height); // Default to "Hack" theme
+            default -> renderElegantBackground(context, width, height); // Default to "Hack" theme
         }
     }
 

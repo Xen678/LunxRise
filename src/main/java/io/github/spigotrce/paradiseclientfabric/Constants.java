@@ -34,7 +34,7 @@ public class Constants {
     /**
      * The edition of the mod.
      */
-    public static String EDITION = "PUBLIC"; // For API
+    public static String EDITION = "PRIVATE-LUNXRISE"; // For API
 
     /**
      * Window title
