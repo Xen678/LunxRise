@@ -147,6 +147,10 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
         });
     }
 
+    public static boolean isPrivate(){
+        return Constants.EDITION.contains("PRIVATE");
+    }
+
     @Override
     public void onInitializeClient() {
         onClientInitialize();

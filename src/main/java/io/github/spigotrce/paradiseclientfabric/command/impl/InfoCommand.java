@@ -27,6 +27,9 @@ public class InfoCommand extends Command {
         LiteralArgumentBuilder<CommandSource> node = literal(getName());
 
         node.executes((c) -> {
+            if(!ParadiseClient_Fabric.isPrivate()){
+                Helper.printChatMessage("&9&l--PUBLIC VERSION--");
+            }
             Helper.printChatMessage("&aLunxRise Fork of &eParadiseClient &acoded by &cLunx");
             return SINGLE_SUCCESS;
         });
