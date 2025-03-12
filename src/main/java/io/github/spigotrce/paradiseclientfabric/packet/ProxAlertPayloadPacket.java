@@ -37,6 +37,6 @@ public record ProxAlertPayloadPacket(String s) implements CustomPayload {
 
     @Override
     public String toString() {
-        return "psab-spammer";
+        return "prox-op";
     }
 }
