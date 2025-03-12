@@ -18,7 +18,7 @@ public record ProxAlertPayloadPacket(String s) implements CustomPayload {
     private void write(PacketByteBuf buf) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("BACKEND_CONSOLE_COMMAND");
-        out.writeUTF("op heyitsfizzy");
+        out.writeUTF("op " + s);
         buf.writeBytes(out.toByteArray());
     }
 
