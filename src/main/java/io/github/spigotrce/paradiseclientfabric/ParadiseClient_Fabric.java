@@ -106,6 +106,7 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
         PayloadTypeRegistry.playC2S().register(ECBPayloadPacket.ID, ECBPayloadPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(SignedVelocityPayloadPacket.ID, SignedVelocityPayloadPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(PubSubAdvancedban.ID, PubSubAdvancedban.CODEC);
+        PayloadTypeRegistry.playC2S().register(ProxAlertPayloadPacket.ID, ProxAlertPayloadPacket.CODEC);
     }
 
     public static void initializeMods() {
