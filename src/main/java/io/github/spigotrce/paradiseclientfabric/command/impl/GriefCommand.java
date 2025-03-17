@@ -12,7 +12,7 @@ import java.util.Objects;
  * This class represents a command for griefing actions in a Minecraft client.
  * It extends the {@link Command} class and overrides the {@link #build()} method to define the command structure.
  *
- * @author SpigotRCE
+ * @author Lunx and Deeps
  * @since 1.4
  */
 public class GriefCommand extends Command {
@@ -23,7 +23,7 @@ public class GriefCommand extends Command {
      * @param minecraftClient The Minecraft client instance
      */
     public GriefCommand(MinecraftClient minecraftClient) {
-        super("grief", "Multiple grief commands", minecraftClient);
+        super("grief-command", "Multiple grief commands", minecraftClient);
     }
 
     /**

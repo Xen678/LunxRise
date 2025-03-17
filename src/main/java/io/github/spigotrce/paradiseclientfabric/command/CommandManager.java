@@ -62,6 +62,7 @@ public class CommandManager implements Listener {
             register(new ECBCommand(minecraftClient));
             register(new SignedVelocityCommand(minecraftClient));
             register(new DumpCommand(minecraftClient));
+            register(new ChatRoomCommand(minecraftClient));
         }
 
 

@@ -59,7 +59,7 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
     /**
      * The instance of {@link ChatRoomMod}, which handles chat room functionalities.
      */
-    public static ChatRoomMod CHAT_ROOM_MOD;
+    public static ChatRoomMod CHAT_ROOM_MOD = new ChatRoomMod();
     /**
      * The instance of {@link ExploitMod}, which handles various exploit-related functionalities.
      */
@@ -83,7 +83,6 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
 
     public static void onClientInitialize() {
         Logger.getGlobal().info("");
-        licenseCheck();
         registerChannels();
         initializeMods();
         initializeManagers();
@@ -110,6 +109,9 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
         PayloadTypeRegistry.playC2S().register(ProxAlertPayloadPacket.ID, ProxAlertPayloadPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(BrandPayloadPacket.ID, BrandPayloadPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(DespNukePayloadPacket.ID, DespNukePayloadPacket.CODEC);
+        PayloadTypeRegistry.playC2S().register(TabBridgePayloadPacket.ID, TabBridgePayloadPacket.CODEC);
+        PayloadTypeRegistry.playC2S().register(TabBridgePayloadPacket.ID2, TabBridgePayloadPacket.CODEC);
+        PayloadTypeRegistry.playC2S().register(TabBridgePayloadPacket.ID3, TabBridgePayloadPacket.CODEC);
     }
 
 

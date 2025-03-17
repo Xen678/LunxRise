@@ -24,7 +24,7 @@ public class Constants {
     /**
      * The name of the mod.
      */
-    public static final String MOD_NAME = "LunxRise-Client";
+    public static final String MOD_NAME = "Holly-Client";
 
     /**
      * The logger for the mod.
