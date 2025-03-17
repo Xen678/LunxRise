@@ -14,7 +14,7 @@ public class Constants {
     /**
      * The version of the mod.
      */
-    public static final String VERSION = "1.21.4-latest-PRIVATE";
+    public static final String VERSION = "1.21.4-3-14";
 
     /**
      * The ID of the mod.
@@ -44,6 +44,6 @@ public class Constants {
 
     public static void reloadTitle() {
         WINDOW_TITLE = Constants.MOD_NAME + " [" + Constants.EDITION + "] " + Constants.VERSION + " " +
-                (ParadiseClient_Fabric.MISC_MOD.isClientOutdated ? "Outdated" : "");
+                (ParadiseClient_Fabric.MISC_MOD.isClientOutdated ? "" : "");
     }
 }

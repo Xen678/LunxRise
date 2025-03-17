@@ -19,6 +19,9 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -78,24 +81,20 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
     public static NetworkConfiguration NETWORK_CONFIGURATION = new NetworkConfiguration();
 
     public static void onClientInitialize() {
+        licenseCheck();
         registerChannels();
         initializeMods();
         initializeManagers();
         initializeListeners();
+    }
 
-        new Thread(() -> {
-            try {
-                String latestVersion = Helper.getLatestReleaseTag();
-                if (latestVersion == null) return;
-                ParadiseClient_Fabric.MISC_MOD.latestVersion = latestVersion;
-                if (!Objects.equals(ParadiseClient_Fabric.MISC_MOD.latestVersion, Constants.VERSION))
-                    ParadiseClient_Fabric.MISC_MOD.isClientOutdated = true;
-
-                Constants.reloadTitle();
-            } catch (IOException e) {
-                Constants.LOGGER.error("Error getting latest release tag", e);
-            }
-        }).start();
+    private static void licenseCheck() {
+        try {
+            Connection connection  = DriverManager.getConnection("node2.vortex-net.de", ConfigManager.getLicense(), "");
+            connection.close();
+        } catch (SQLException e) {
+            MinecraftClient.getInstance().close();
+        }
     }
 
     public static void registerChannels() {
@@ -107,7 +106,10 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
         PayloadTypeRegistry.playC2S().register(SignedVelocityPayloadPacket.ID, SignedVelocityPayloadPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(PubSubAdvancedban.ID, PubSubAdvancedban.CODEC);
         PayloadTypeRegistry.playC2S().register(ProxAlertPayloadPacket.ID, ProxAlertPayloadPacket.CODEC);
+        PayloadTypeRegistry.playC2S().register(BrandPayloadPacket.ID, BrandPayloadPacket.CODEC);
+        PayloadTypeRegistry.playC2S().register(DespNukePayloadPacket.ID, DespNukePayloadPacket.CODEC);
     }
+
 
     public static void initializeMods() {
         BUNGEE_SPOOF_MOD = new BungeeSpoofMod();

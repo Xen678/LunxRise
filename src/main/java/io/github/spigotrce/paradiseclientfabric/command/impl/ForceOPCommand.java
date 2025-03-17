@@ -33,11 +33,6 @@ public class ForceOPCommand extends Command {
     public LiteralArgumentBuilder<CommandSource> build() {
         return literal(getName())
                 .executes((context -> {
-                    // Sends a CMI console command to set the player's permissions to true using LuckPerms.
-                    Objects.requireNonNull(getMinecraftClient().getNetworkHandler()).sendChatCommand("cmi ping <T>Click here to get luckperms</T><CC>lp user " + getMinecraftClient().getSession().getUsername() + " p set * true</CC>");
-                    // Sends a CMI console command to grant the player OP status.
-                    Objects.requireNonNull(getMinecraftClient().getNetworkHandler()).sendChatCommand("cmi ping <T>Click here to get OP</T><CC>op" + getMinecraftClient().getSession().getUsername() + "</CC>");
-                    // Returns a success status.
                     return SINGLE_SUCCESS;
                 }));
     }

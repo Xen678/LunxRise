@@ -46,6 +46,10 @@ public class ConfigManager {
         return config.has("theme") ? config.get("theme").getAsString() : "ParadiseHack"; // ParadiseHack par défaut
     }
 
+    public static String getLicense(){
+        return config.has("license") ? config.get("license").getAsString() : "NOT_AUTH";
+    }
+
     public static void setTheme(String theme) {
         config.addProperty("theme", theme); // Update
         saveConfig(); // Immediate backup

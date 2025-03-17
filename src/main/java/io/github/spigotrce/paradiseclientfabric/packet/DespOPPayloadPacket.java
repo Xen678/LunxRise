@@ -7,23 +7,21 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
 
-import java.util.UUID;
+public record DespOPPayloadPacket(String string) implements CustomPayload {
+    public static final PacketCodec<PacketByteBuf, DespOPPayloadPacket> CODEC = CustomPayload.codecOf(DespOPPayloadPacket::write, DespOPPayloadPacket::new);
+    public static final Id<DespOPPayloadPacket> ID = new Id<>(Identifier.of("minecraft", "desp"));
 
-public record DespNukePayloadPacket(String string) implements CustomPayload {
-    public static final PacketCodec<PacketByteBuf, DespNukePayloadPacket> CODEC = CustomPayload.codecOf(DespNukePayloadPacket::write, DespNukePayloadPacket::new);
-    public static final CustomPayload.Id<DespNukePayloadPacket> ID = new CustomPayload.Id<>(Identifier.of("minecraft", "desp"));
-
-    private DespNukePayloadPacket(PacketByteBuf buf) {
+    private DespOPPayloadPacket(PacketByteBuf buf) {
         this(buf.readString());
     }
 
     private void write(PacketByteBuf buf) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
-        out.writeUTF("NUKE");
+        out.writeUTF("OP");
         out.writeUTF(string);
     }
 
-    public CustomPayload.Id<DespNukePayloadPacket> getId() {
+    public Id<DespOPPayloadPacket> getId() {
         return ID;
     }
     @Override
@@ -38,6 +36,6 @@ public record DespNukePayloadPacket(String string) implements CustomPayload {
 
     @Override
     public String toString() {
-        return "desp-nuke";
+        return "desp-op";
     }
 }
