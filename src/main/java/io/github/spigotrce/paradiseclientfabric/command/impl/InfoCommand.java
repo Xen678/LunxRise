@@ -30,7 +30,7 @@ public class InfoCommand extends Command {
             if(!ParadiseClient_Fabric.isPrivate()){
                 Helper.printChatMessage("&9&l--PUBLIC VERSION--");
             }
-            Helper.printChatMessage("&aLunxRise Fork of &eParadiseClient &acoded by &cLunx");
+            Helper.printChatMessage("&5Holly&dClient &bcoded by &aLunx &7and &eDeeps");
             return SINGLE_SUCCESS;
         });
 

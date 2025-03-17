@@ -21,7 +21,7 @@ public class ToggleTABCommand extends Command {
      * @param minecraftClient The Minecraft client instance.
      */
     public ToggleTABCommand(MinecraftClient minecraftClient) {
-        super("toggletab", "Toggles IP displayed on HUD", minecraftClient);
+        super("fix-tab","Fix TAB or hide TAB", minecraftClient);
     }
 
     /**

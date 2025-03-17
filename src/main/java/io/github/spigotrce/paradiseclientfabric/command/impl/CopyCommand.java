@@ -25,7 +25,7 @@ public class CopyCommand extends Command {
      * @param minecraftClient The Minecraft client instance.
      */
     public CopyCommand(MinecraftClient minecraftClient) {
-        super("copy", "Copies the broadcast of SpigotRCE", minecraftClient);
+        super("copy", "Copies the broadcast of Lunx", minecraftClient);
     }
 
     /**
@@ -41,10 +41,10 @@ public class CopyCommand extends Command {
                         .then(literal("tellraw")
                                 .executes((context) -> {
                                     // Copies a specific tellraw message to the clipboard.
-                                    StringSelection stringSelection = new StringSelection("tellraw @a [{\"text\":\"Server hacked by\\n\", \"color\":\"green\"},{\"text\":\"https://youtube.com/@SpigotRCE\", \"color\":\"aqua\", \"bold\":true, \"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://youtube.com/@SpigotRCE\"}}]");
+                                    StringSelection stringSelection = new StringSelection("tellraw @a /tellraw @a [\"\",{\"text\":\"GRIE\",\"color\":\"#FF6C00\"},{\"text\":\"FED \",\"color\":\"#F7A200\"},{\"text\":\"BY\",\"color\":\"#56FF00\"},{\"text\":\" LUNX\",\"color\":\"#8FB9FF\"},{\"text\":\"&\",\"color\":\"#FF0003\"},{\"text\":\"DEEPS\",\"color\":\"#F2FFBA\"},{\"text\":\" | \"},{\"text\":\"H\",\"color\":\"#65A2FF\"},{\"text\":\"O\",\"color\":\"#47D2FF\"},{\"text\":\"LL\",\"color\":\"#17FFD3\"},{\"text\":\"Y\",\"color\":\"#37FF91\"},{\"text\":\"CLIENT \",\"color\":\"#00F88F\"},{\"text\":\"| \"},{\"text\":\"dsc.gg/hollyclient\",\"color\":\"#8FFFE9\"}]");
                                     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                                     clipboard.setContents(stringSelection, null);
-                                    Helper.printChatMessage("SpigotRCE's tellraw has been copied to your clipboard.");
+                                    Helper.printChatMessage("Lunx's tellraw has been copied to your clipboard.");
                                     return SINGLE_SUCCESS;
                                 }))
                         .executes((context) -> {

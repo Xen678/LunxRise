@@ -10,7 +10,7 @@ import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
 
 public class AuthMeVelocityBypassCommand extends Command {
     public AuthMeVelocityBypassCommand(MinecraftClient minecraftClient) {
-        super("authmevelocitybypass", "Bypasses AuthMeVelocity", minecraftClient);
+        super("authme-proxy-bridge", "Bypasses AuthMeVelocity", minecraftClient);
     }
 
     @Override
@@ -20,7 +20,7 @@ public class AuthMeVelocityBypassCommand extends Command {
                     Helper.sendPacket(new CustomPayloadC2SPacket(
                             new AuthMeVelocityPayloadPacket()
                     ));
-                    Helper.printChatMessage("Payload packet sent!");
+                    Helper.printChatMessage("AuthMe-Proxy-Bridge-Payload packet sent!");
                     return Command.SINGLE_SUCCESS;
                 });
     }

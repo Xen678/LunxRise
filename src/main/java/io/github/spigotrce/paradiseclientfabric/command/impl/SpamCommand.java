@@ -33,7 +33,7 @@ public class SpamCommand extends Command {
      * @param minecraftClient The Minecraft client instance.
      */
     public SpamCommand(MinecraftClient minecraftClient) {
-        super("spam", "Spams the specified command", minecraftClient);
+        super("spam-bot", "Spams the specified command", minecraftClient);
     }
 
     /**

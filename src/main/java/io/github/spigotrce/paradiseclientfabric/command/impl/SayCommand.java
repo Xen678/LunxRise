@@ -9,7 +9,7 @@ import net.minecraft.command.CommandSource;
 
 public class SayCommand extends Command {
     public SayCommand(MinecraftClient minecraftClient) {
-        super("say", "Sends a chat message to the server", minecraftClient);
+        super("chat", "Sends a chat message to the server", minecraftClient);
     }
 
     @Override

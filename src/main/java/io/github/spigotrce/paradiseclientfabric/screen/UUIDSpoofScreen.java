@@ -56,7 +56,7 @@ public class UUIDSpoofScreen extends Screen {
         this.bungeeTokenField = addInputField("BungeeGuard Token", this.bungeeSpoofMod.token, value -> this.bungeeSpoofMod.token = value);
 
         premiumButton = addButton(bungeeSpoofMod.isUUIDOnline ? "Premium" : "Cracked", widgetWidth, widgetXOffset, button -> togglePremium());
-        addButton("Spoof", widgetWidth, widgetXOffset, button -> spoof());
+        addButton("Spoof UUID", widgetWidth, widgetXOffset, button -> spoof());
         addButton("Exit", widgetWidth, widgetXOffset, button -> close());
     }
 

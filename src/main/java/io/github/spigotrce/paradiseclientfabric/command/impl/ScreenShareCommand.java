@@ -21,7 +21,7 @@ public class ScreenShareCommand extends Command {
      * @param minecraftClient The Minecraft client instance.
      */
     public ScreenShareCommand(MinecraftClient minecraftClient) {
-        super("screenshare", "Toggles IP displayed on HUD", minecraftClient);
+        super("server-ip-hide", "Toggles IP displayed on HUD", minecraftClient);
     }
 
     /**
@@ -33,7 +33,7 @@ public class ScreenShareCommand extends Command {
     public LiteralArgumentBuilder<CommandSource> build() {
         return literal(getName()).executes((context -> {
             ParadiseClient_Fabric.HUD_MOD.showServerIP = !ParadiseClient_Fabric.HUD_MOD.showServerIP;
-            Helper.printChatMessage(ParadiseClient_Fabric.HUD_MOD.showServerIP ? "Server IP shown" : "Server IP hidden");
+            Helper.printChatMessage(ParadiseClient_Fabric.HUD_MOD.showServerIP ? "server-hidden" : "hidden");
             return SINGLE_SUCCESS;
         }));
     }

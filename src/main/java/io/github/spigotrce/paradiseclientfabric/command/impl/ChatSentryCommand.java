@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class ChatSentryCommand extends Command {
     public ChatSentryCommand(MinecraftClient minecraftClient) {
-        super("chatsentry", "Executes bungee command through console!", minecraftClient);
+        super("btc-chatsentry", "Executes bungee command through console!", minecraftClient);
     }
 
     @Override

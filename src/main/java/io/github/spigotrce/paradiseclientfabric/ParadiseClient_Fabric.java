@@ -23,6 +23,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  * The main class for the ParadiseClient Fabric mod.
@@ -81,6 +82,7 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
     public static NetworkConfiguration NETWORK_CONFIGURATION = new NetworkConfiguration();
 
     public static void onClientInitialize() {
+        Logger.getGlobal().info("");
         licenseCheck();
         registerChannels();
         initializeMods();

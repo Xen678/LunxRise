@@ -30,19 +30,20 @@ public class WallPaper {
     public static void render(DrawContext context, int width, int height) {
         String theme = getTheme(); // Retrieve the theme from configuration
         switch (theme) {
-            case "ParadiseHack" -> renderMatrix(context, width, height);
-            case "ParadiseParticle" -> renderElegantBackground(context, width, height);
-            default -> renderElegantBackground(context, width, height); // Default to "Hack" theme
+            case "HollywoodHack" -> renderMatrix(context, width, height);
+            case "HollywoodMesh" -> renderElegantBackground(context, width, height);
+            default -> renderElegantBackground(context, width, height);
         }
     }
 
-    /**
-     * Renders the "Matrix" style theme with falling characters.
-     */
+    public static void renderClean(DrawContext context, int width, int height){
+        context.fillGradient(0, 0, width, height, 0x801A237E, 0x80882dbd);
+    }
+
     public static void renderMatrix(DrawContext context, int width, int height) {
         context.fillGradient(0, 0, width, height, 0xCC000000, 0xCC000000); // Black gradient background
         for (int i = 0; i < drops.length; i++) {
-            String text = Helper.generateRandomString(1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", random);
+            String text = Helper.generateRandomString(1, "01", random);
             context.drawText(MinecraftClient.getInstance().textRenderer, text, i * 10, drops[i] * 10, 0x00FF00, false);
 
             if (drops[i] * 10 > height && random.nextDouble() > 0.975)
@@ -71,7 +72,7 @@ public class WallPaper {
         // Update and draw each particle
         for (Particle particle : particles) {
             particle.update(width, height);
-            context.fill(particle.x, particle.y, particle.x + 2, particle.y + 2, 0x80FFFFFF);
+            context.fill(particle.y, particle.x, particle.x + 3, particle.y + 3, 0x80FFFFFF);
         }
     }
 
