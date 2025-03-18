@@ -66,7 +66,7 @@ public class CommandManager implements Listener {
         }
 
 
-        // Register this command at the very end so it registers all commands in it
+        // Register this command at the very end, so it registers all commands in it
         register(new HelpCommand(minecraftClient));
         register(new InfoCommand(minecraftClient));
     }
