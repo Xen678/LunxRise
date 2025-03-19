@@ -90,12 +90,12 @@ public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializ
     }
 
     private static void licenseCheck() {
-        try {
-            Connection connection  = DriverManager.getConnection("77.90.12.27", ConfigManager.getLicense(), "");
-            connection.close();
-        } catch (SQLException e) {
-            MinecraftClient.getInstance().close();
-        }
+        //try {
+          //  Connection connection  = DriverManager.getConnection("77.90.12.27", ConfigManager.getLicense(), "");
+            //connection.close();
+        //} catch (SQLException e) {
+            //MinecraftClient.getInstance().close();
+        //}
     }
 
     public static void registerChannels() {

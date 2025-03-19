@@ -7,10 +7,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
-// TODO: Migrate to Boosted yaml
 public class ConfigManager {
-    private static final File CONFIG_FILE = new File("config/paradiseclient.json");
+    private static final File CONFIG_FILE = new File("hollyclient/config.json");
     private static JsonObject config;
 
     static {
@@ -43,7 +41,7 @@ public class ConfigManager {
     }
 
     public static String getTheme() {
-        return config.has("theme") ? config.get("theme").getAsString() : "ParadiseHack"; // ParadiseHack par défaut
+        return config.has("theme") ? config.get("theme").getAsString() : "ParadiseHack";
     }
 
     public static String getLicense(){
