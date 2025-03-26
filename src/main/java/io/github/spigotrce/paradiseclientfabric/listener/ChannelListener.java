@@ -25,6 +25,9 @@ public class ChannelListener implements Listener {
                         Helper.showNotification("Exploit found!", splitted);
                 }
             else
+                if (channelName.equalsIgnoreCase("minecraft:brand")){
+                    return;
+                }
                 Helper.printChatMessage("&fChannel: &d" + channelName + " &fData: &d" + buf.toString(Charset.defaultCharset()));
         } catch (Exception e) {
             Helper.printChatMessage("&4Error handling listener for payload for channel: " + channelName + " " + e.getMessage());

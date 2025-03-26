@@ -67,7 +67,7 @@ public class Helper {
     }
 
     public static void printChatMessage(Text message) {
-        ParadiseClient_Fabric.MISC_MOD.delayedMessages.add(message);
+        HollyClient.MISC_MOD.delayedMessages.add(message);
     }
 
     public static String appendPrefix(String text) {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "paradiseclient-fabric",
+  "id": "holly-client",
   "version": "${version}",
   "name": "ParadiseClient-Fabric",
   "description": "",
