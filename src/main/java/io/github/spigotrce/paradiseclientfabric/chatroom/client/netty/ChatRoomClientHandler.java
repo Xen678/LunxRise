@@ -11,12 +11,9 @@ import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.Packet;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.PacketRegistry;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.DisconnectPacket;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.HandshakePacket;
-import io.github.spigotrce.paradiseclientfabric.chatroom.server.Logging;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.util.UUID;
 
 public class ChatRoomClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     private ClientPacketHandler packetHandler;

@@ -5,7 +5,6 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import io.github.spigotrce.paradiseclientfabric.Constants;
 import io.github.spigotrce.paradiseclientfabric.Helper;
 import io.github.spigotrce.paradiseclientfabric.ParadiseClient_Fabric;
-import io.github.spigotrce.paradiseclientfabric.chatroom.client.Client;
 import io.github.spigotrce.paradiseclientfabric.chatroom.client.TokenStore;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.PacketRegistry;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.MessagePacket;
@@ -67,36 +66,8 @@ public class ChatRoomCommand extends Command {
                         )
                 )
                 .then(literal("connect")
-                        .executes(context -> {
-                            if (ParadiseClient_Fabric.CHAT_ROOM_MOD.isConnected) {
-                                Helper.printChatMessage("You are already connected to chatroom");
-                                return SINGLE_SUCCESS;
-                            }
-                            try {
-                                TokenStore.readToken();
-                            } catch (IOException e) {
-                                Helper.printChatMessage("§4§lError: Failed to read token");
-                                Constants.LOGGER.error("Failed to read token", e);
-                                return SINGLE_SUCCESS;
-                            }
-                            try {
-                                Client.connected();
-                            } catch (Exception e) {
-                                Helper.printChatMessage("§4§lError: Failed to connect to chatroom");
-                                Constants.LOGGER.error("Failed to connect to chatroom", e);
-                            }
-                            return SINGLE_SUCCESS;
-                        })
                 )
                 .then(literal("disconnect")
-                        .executes(context -> {
-                            if (!ParadiseClient_Fabric.CHAT_ROOM_MOD.isConnected) {
-                                Helper.printChatMessage("§4§lError: Not connected to chatroom");
-                                return SINGLE_SUCCESS;
-                            }
-                            Client.stop();
-                            return SINGLE_SUCCESS;
-                        })
                 );
     }
 }

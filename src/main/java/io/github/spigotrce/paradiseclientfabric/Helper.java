@@ -25,8 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 /**
  * Utility class providing various helper methods for Minecraft client operations.
@@ -67,7 +65,7 @@ public class Helper {
     }
 
     public static void printChatMessage(Text message) {
-        HollyClient.MISC_MOD.delayedMessages.add(message);
+        ParadiseClient_Fabric.MISC_MOD.delayedMessages.add(message);
     }
 
     public static String appendPrefix(String text) {

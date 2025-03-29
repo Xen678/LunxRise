@@ -29,7 +29,7 @@ import org.lwjgl.glfw.GLFW;
  * @author Lunx
  * @since 1.0
  */
-public class HollyClient implements ModInitializer, ClientModInitializer {
+public class ParadiseClient_Fabric implements ModInitializer, ClientModInitializer {
     /**
      * The Minecraft client instance.
      */
@@ -121,16 +121,16 @@ public class HollyClient implements ModInitializer, ClientModInitializer {
 
     public static void initializeManagers() {
         EVENT_MANAGER = new EventManager();
-        EXPLOIT_MANAGER = new ExploitManager(HollyClient.MINECRAFT_CLIENT);
-        HollyClient.EXPLOIT_MANAGER.init();
-        COMMAND_MANAGER = new CommandManager(HollyClient.MINECRAFT_CLIENT);
-        HollyClient.COMMAND_MANAGER.init();
+        EXPLOIT_MANAGER = new ExploitManager(ParadiseClient_Fabric.MINECRAFT_CLIENT);
+        ParadiseClient_Fabric.EXPLOIT_MANAGER.init();
+        COMMAND_MANAGER = new CommandManager(ParadiseClient_Fabric.MINECRAFT_CLIENT);
+        ParadiseClient_Fabric.COMMAND_MANAGER.init();
     }
 
     public static void initializeListeners() {
-        HollyClient.EVENT_MANAGER.registerListener(new PacketListener());
-        HollyClient.EVENT_MANAGER.registerListener(HollyClient.COMMAND_MANAGER);
-        HollyClient.EVENT_MANAGER.registerListener(new ChannelListener());
+        ParadiseClient_Fabric.EVENT_MANAGER.registerListener(new PacketListener());
+        ParadiseClient_Fabric.EVENT_MANAGER.registerListener(ParadiseClient_Fabric.COMMAND_MANAGER);
+        ParadiseClient_Fabric.EVENT_MANAGER.registerListener(new ChannelListener());
     }
 
     @Override
@@ -145,7 +145,7 @@ public class HollyClient implements ModInitializer, ClientModInitializer {
         );
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (paradiseCommandOpener.wasPressed())
-                MinecraftClient.getInstance().setScreen(new ChatScreen(HollyClient.COMMAND_MANAGER.prefix));
+                MinecraftClient.getInstance().setScreen(new ChatScreen(ParadiseClient_Fabric.COMMAND_MANAGER.prefix));
         });
     }
 

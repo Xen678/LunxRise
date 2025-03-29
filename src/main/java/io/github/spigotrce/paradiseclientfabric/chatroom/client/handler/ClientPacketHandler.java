@@ -10,8 +10,6 @@ import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.Disc
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.HandshakeResponsePacket;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.KeepAlivePacket;
 import io.github.spigotrce.paradiseclientfabric.chatroom.common.packet.impl.MessagePacket;
-import io.github.spigotrce.paradiseclientfabric.chatroom.server.Logging;
-import io.github.spigotrce.paradiseclientfabric.mod.ChatRoomMod;
 import io.netty.channel.Channel;
 
 public class ClientPacketHandler extends AbstractPacketHandler {

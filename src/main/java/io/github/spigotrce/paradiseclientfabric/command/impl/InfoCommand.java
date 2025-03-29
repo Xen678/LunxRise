@@ -2,7 +2,6 @@ package io.github.spigotrce.paradiseclientfabric.command.impl;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import io.github.spigotrce.paradiseclientfabric.Helper;
-import io.github.spigotrce.paradiseclientfabric.ParadiseClient_Fabric;
 import io.github.spigotrce.paradiseclientfabric.command.Command;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.CommandSource;
@@ -25,14 +24,6 @@ public class InfoCommand extends Command {
     @Override
     public LiteralArgumentBuilder<CommandSource> build() {
         LiteralArgumentBuilder<CommandSource> node = literal(getName());
-
-        node.executes((c) -> {
-            if(!ParadiseClient_Fabric.isPrivate()){
-                Helper.printChatMessage("&9&l--PUBLIC VERSION--");
-            }
-            Helper.printChatMessage("&5Holly&dClient &bcoded by &aLunx &7and &eDeeps");
-            return SINGLE_SUCCESS;
-        });
 
         return node;
     }

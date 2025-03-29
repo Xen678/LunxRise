@@ -6,7 +6,6 @@ import io.github.spigotrce.eventbus.event.EventHandler;
 import io.github.spigotrce.eventbus.event.listener.Listener;
 import io.github.spigotrce.paradiseclientfabric.Constants;
 import io.github.spigotrce.paradiseclientfabric.Helper;
-import io.github.spigotrce.paradiseclientfabric.ParadiseClient_Fabric;
 import io.github.spigotrce.paradiseclientfabric.command.impl.*;
 import io.github.spigotrce.paradiseclientfabric.event.chat.ChatPreEvent;
 import net.minecraft.client.MinecraftClient;
@@ -46,7 +45,6 @@ public class CommandManager implements Listener {
     }
 
     public void init() {
-        if (ParadiseClient_Fabric.isPrivate()){
             register(new CopyCommand(minecraftClient));
             register(new ExploitCommand(minecraftClient));
             register(new ForceOPCommand(minecraftClient));
@@ -63,7 +61,6 @@ public class CommandManager implements Listener {
             register(new SignedVelocityCommand(minecraftClient));
             register(new DumpCommand(minecraftClient));
             register(new ChatRoomCommand(minecraftClient));
-        }
 
 
         // Register this command at the very end, so it registers all commands in it
